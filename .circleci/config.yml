@@ -32,7 +32,7 @@ jobs:
       - run: git submodule sync
       - run: git submodule update --init --recursive --jobs 8
       - run: echo "Git submodule update complete"
-      - run: sh 'chmod +x gradlew'
+      - run: chmod +x ./gradlew
       
 
       # And finally run the release build
