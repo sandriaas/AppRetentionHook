@@ -17,8 +17,6 @@ jobs:
       tag: default
       resource-class: large
 
-    working_directory: ~/thanox_workspace
-
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -34,6 +32,8 @@ jobs:
       - run: git submodule sync
       - run: git submodule update --init --recursive --jobs 8
       - run: echo "Git submodule update complete"
+
+      - run: sh 'chmod +x gradlew'
       
 
       # And finally run the release build
